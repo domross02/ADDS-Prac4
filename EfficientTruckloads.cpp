@@ -5,7 +5,7 @@
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
 
-if(loadSize<0||numCrates<0){
+if(loadSize<0||numCrates<=0){
     return 0;
 }
 if(numCrates<=loadSize||numCrates==0){
