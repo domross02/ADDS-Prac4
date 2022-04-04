@@ -3,9 +3,10 @@
 #include <math.h>
 #include <string>
 int Reverse::reverseDigit(int num){
+    try{
     if(num<0){
-    std::cout<<"ERROR NEGATIVE NUMBER"<<std::endl;
-        return 1;
+
+        return -1;
     }
     if(num ==0){
         return num;
@@ -18,9 +19,15 @@ int Reverse::reverseDigit(int num){
     int revNewNum = reverseDigit(newNum);
 
     return  revNewNum+last*pow(10,(int(log10(num))));
+    }
+    catch(int intErr){
+        intErr=-1;
+        return intErr;
+    }
 
 }
 std::string Reverse::reverseString(std::string word){
+    try{
     if(word==""){
         return word;
     }
@@ -28,4 +35,9 @@ std::string Reverse::reverseString(std::string word){
     word.erase(word.begin());
     std::string rest = reverseString(word);
     return rest + first;
+    }
+    catch(std::string strError){
+        strError="ERROR";
+        return strError;
+    }
 }
