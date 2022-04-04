@@ -1,7 +1,10 @@
 #include "Truckloads.h"
 #include <math.h>
 int Truckloads::numTrucks(int numCrates, int loadSize){
-if(numCrates<=loadSize){
+if(loadSize<0||numCrates<=0){
+    return 0;
+}
+if(numCrates<=loadSize||numCrates==0){
     return 1;
 }
 int pile1;
