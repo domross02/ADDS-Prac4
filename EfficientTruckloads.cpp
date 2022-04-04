@@ -4,11 +4,14 @@
 
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
-if(numCrates<=loadSize||loadSize<=0||numCrates<=0){
+if(loadSize<=0||numCrates<0){
+    return -1;
+}
+if(numCrates<=loadSize||numCrates==0){
     return 1;
 }
-if(!crateslookupTable.empty()){
-    for(int i = 0; i<crateslookupTable.size();i++){
+if(!reslookupTable.empty()){
+    for(int i = 0; i<reslookupTable.size();i++){
         if(numCrates==crateslookupTable.at(i)){
             return reslookupTable.at(i);
         }
