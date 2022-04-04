@@ -8,7 +8,7 @@ if(numCrates<=loadSize||loadSize<=0||numCrates<=0){
     return 1;
 }
 if(!crateslookupTable.empty()){
-    for(int i = 0; i<crateslookupTable.capacity();i++){
+    for(int i = 0; i<crateslookupTable.size();i++){
         if(numCrates==crateslookupTable.at(i)){
             return reslookupTable.at(i);
         }
