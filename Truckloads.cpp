@@ -4,16 +4,17 @@ int Truckloads::numTrucks(int numCrates, int loadSize){
 if(numCrates<=loadSize){
     return 1;
 }
-int newCrates;
-int num;
+int pile1;
+int pile2;
 if(numCrates % 2 == 0){
-newCrates = (numCrates/2);
-num = 2*numTrucks(newCrates, loadSize);
-
+    pile1=numCrates/2;
+    pile2=numCrates/2;
 }
 else{
-newCrates = ((numCrates+1)/2);
-num = 2*numTrucks(newCrates, loadSize)-1;
+    pile1=numCrates/2;
+    pile2=(numCrates/2)+1;
 }
+int num = numTrucks(pile1, loadSize)+numTrucks(pile2, loadSize);
 return num;
+
 }
